@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key>
+	<string>MacExplorer</string>
+	<key>CFBundleDisplayName</key>
+	<string>File Explorer</string>
+	<key>CFBundleExecutable</key>
+	<string>MacExplorer</string>
+	<key>CFBundleIdentifier</key>
+	<string>com.mattsayar.macexplorer</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>0.1.0</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+	<key>LSMinimumSystemVersion</key>
+	<string>13.0</string>
+	<key>NSHighResolutionCapable</key>
+	<true/>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>File Explorer needs access to your Desktop to browse and manage its files.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>File Explorer needs access to your Documents to browse and manage its files.</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>File Explorer needs access to your Downloads to browse and manage its files.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>File Explorer needs access to removable volumes to browse and manage their files.</string>
+</dict>
+</plist>
