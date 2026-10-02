@@ -134,3 +134,12 @@ Sources/MacExplorer/
 - There's no test target — everything currently lives in one executable target.
   Splitting the models and services into a `MacExplorerCore` library would make
   the sorting, grouping and size-formatting logic directly testable.
+
+## License
+
+[MIT](LICENSE).
+
+The Windows 10 look is reproduced from observation of Explorer's interface; no
+Microsoft code, assets or fonts are included. "Windows" and "File Explorer"
+are trademarks of Microsoft Corporation, used here only to describe what this
+project imitates.
