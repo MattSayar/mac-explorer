@@ -1,0 +1,43 @@
+name: Build
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: swift build (macOS)
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Show toolchain
+        run: |
+          swift --version
+          xcodebuild -version
+          sw_vers
+
+      - name: Build (debug)
+        run: swift build -c debug
+
+      - name: Build app bundle (release)
+        run: ./Scripts/build-app.sh release
+
+      # ditto keeps the bundle's executable bits and symlinks, which a plain
+      # artifact upload of a .app directory would flatten.
+      - name: Package bundle
+        run: ditto -c -k --sequesterRsrc --keepParent build/MacExplorer.app build/MacExplorer.app.zip
+
+      - name: Upload bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: MacExplorer-app
+          path: build/MacExplorer.app.zip
+          if-no-files-found: error
